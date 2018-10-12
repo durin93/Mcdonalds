@@ -14,6 +14,7 @@ public class Menu implements IMenu {
         List<MenuItem> items = new ArrayList<>();
         items.add(MenuItem.BIGMAC);
         items.add(MenuItem.SANGHAI);
+        items.add(MenuItem.COKE);
         return items;
     }
 

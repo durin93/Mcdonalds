@@ -13,15 +13,12 @@ public class Chef implements IChef {
 
     public Foods makeFood(Cart cart) {
         for (int i = 0; i < cart.size(); i++) {
-            foods.add(makeFood(cart.getMenuName(i)));
+            foods.add(makeFood(cart.getMenuItem(i)));
         }
         return foods;
     }
 
-    public IFood makeFood(String menuName) {
-        if(menuName.equals("빅맥")){
-            return new Hambuger(menuName);
-        }
-        return null;
+    public IFood makeFood(MenuItem menuItem) {
+        return menuItem.foodlization();
     }
 }

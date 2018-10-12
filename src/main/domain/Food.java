@@ -2,12 +2,13 @@ package main.domain;
 
 import main.support.IFood;
 
-public class Hambuger implements IFood {
+public class Food implements IFood {
     private String name;
     private int kcal;
 
-    public Hambuger(String menuName) {
+    public Food(String menuName, int kcal) {
         this.name = menuName;
+        this.kcal = kcal;
     }
 
     @Override
@@ -15,7 +16,7 @@ public class Hambuger implements IFood {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Hambuger hambuger = (Hambuger) o;
+        Food hambuger = (Food) o;
 
         if (kcal != hambuger.kcal) return false;
         return name != null ? name.equals(hambuger.name) : hambuger.name == null;
