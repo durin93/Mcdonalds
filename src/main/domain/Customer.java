@@ -6,12 +6,17 @@ public class Customer implements ICustomer {
 
     private Cart cart;
 
-    public Cart chooseMenu(String menuName) {
-        return null;
+    public Customer() {
+        this.cart = new Cart();
     }
 
-    public void order(Cart menues) {
+    public Cart chooseMenu(String menuName) {
+        cart.add(Menu.search(menuName));
+        return cart;
+    }
 
+    public Foods order(Cashier cashier, Chef chef) {
+        return cashier.receiveOrder(cart,chef);
     }
 
 }
